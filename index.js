@@ -7,11 +7,30 @@ function getHumanChoice() {
     return parseInt(prompt("Input 1: Rock,  2: Paper, 3:  Scissors", "Input number"));
 }
 
-let humanScore = 0;
-let computerScore = 0;
 const humanChoice = getHumanChoice()
 const computerChoice = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
 }
+
+
+// Main Game loop
+function playGame {
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
