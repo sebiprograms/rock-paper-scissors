@@ -11,6 +11,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+
     if (humanChoice == computerChoice){
         console.log("Tie!")
     } else if ((humanChoice == 1 && computerChoice == 2) || (humanChoice == 2 && computerChoice == 3) || (humanChoice == 3 && computerChoice == 1)) {
@@ -24,9 +25,9 @@ function playRound(humanChoice, computerChoice) {
 
 
 // Main Game loop
-function playGame {
+function playGame() {
     let gameOn = true;
-    
+
 
     while(gameOn == true) {
 
@@ -36,12 +37,14 @@ function playGame {
             playRound(humanChoice, computerChoice);
         }
         //ends game after 5 rounds
-        console.log("The Champion")
+        champion = humanScore > computerScore ? "Player" : "Computer";
+        console.log("The Champion is " + champion);
         gameOn = false;
     }
 
-
 }
+
+playGame();
 
 
 
