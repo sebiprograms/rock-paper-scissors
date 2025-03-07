@@ -1,3 +1,5 @@
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     // Returns a number either 0 1 2
@@ -16,14 +18,15 @@ function getHumanChoice() {
     return prompt("rock,  paper, scissors", "Input choice");
 }
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 function playRound(humanChoice, computerChoice) {
 
     if (humanChoice == computerChoice){
         console.log("Tie!")
-    } else if ((humanChoice == 1 && computerChoice == 2) || (humanChoice == 2 && computerChoice == 3) || (humanChoice == 3 && computerChoice == 1)) {
+        humanScore += 1;
+        computerScore += 1;
+    } else if ((humanChoice == "rock" && computerChoice == "paper") || (humanChoice == "paper" && computerChoice == "scissors") || (humanChoice == "scissorrs" && computerChoice == "rock")) {
         console.log("Computer Wins!")
         computerScore += 1;
     } else {
@@ -33,19 +36,18 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-// Main Game loop
+// Game loop
 function playGame() {
     let gameOn = true;
 
+    while(gameOn) {
 
-    while(gameOn == true) {
-
-        for (let i = 0; i <= 5; i++) {
-            const humanChoice = getHumanChoice()
-            const computerChoice = getComputerChoice();
-            playRound(humanChoice, computerChoice);
+        // Best out of 3 rounds wins
+        for (let i = 0; i < 3; i++) {
+            playRound(getHumanChoice(), getComputerChoice())
         }
-        //ends game after 5 rounds
+
+        // decides winner
         champion = humanScore > computerScore ? "Player" : "Computer";
         console.log("The Champion is " + champion);
         gameOn = false;
