@@ -1,6 +1,15 @@
 
 function getComputerChoice() {
-    return Math.floor(Math.random() * (4 - 1))+1;
+    // Returns a number either 0 1 2
+    choice = Math.floor(Math.random() * 3);
+    
+    if (choice == 0){
+        return "rock";
+    } else if (choice == 1){
+        return "paper"
+    } else if (choice == 2) {
+        return "scissors"
+    }
 }
 
 function getHumanChoice() {
