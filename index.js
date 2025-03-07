@@ -20,8 +20,8 @@ function getComputerChoice() {
 
 
 function whoWon() {
-    champion = humanScore > computerScore ? "Player" : "Computer";
-    console.log("The Champion is " + champion);
+    champion = humanScore > computerScore ? "Player" : "Computer"
+    console.log("The Champion is " + champion)
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -37,9 +37,17 @@ function playRound(humanChoice, computerChoice) {
         console.log("Human Wins!");
         humanScore += 1;
     }
-    whoWon()
-};
+}
 
-rock.addEventListener("onClick", playRound(rock.id, getComputerChoice()))
-paper.addEventListener("onClick", playRound(paper.id, getComputerChoice()))
-scissors.addEventListener("onClick", playRound(scissors.id, getComputerChoice()))
+
+rock.addEventListener("click", () => {
+    playRound(rock.id, getComputerChoice())
+})
+
+paper.addEventListener("click", () => {
+    playRound(paper.id, getComputerChoice())
+})
+
+scissors.addEventListener("click", () => {
+    playRound(scissors.id, getComputerChoice())
+})
