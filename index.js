@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    return parseInt(prompt("Input 1: Rock,  2: Paper, 3:  Scissors", "Input number"));
+    return prompt("rock,  paper, scissors", "Input choice");
 }
 
 let humanScore = 0;
