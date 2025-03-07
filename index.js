@@ -1,5 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
 
 function getComputerChoice() {
     // Returns a number either 0 1 2
@@ -14,13 +17,7 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let choice = prompt("rock,  paper, scissors", "Input choice");
-    if (( choice != "rock" ) || ( choice != "paper" ) || ( choice != "scissors" )) {
-        console.error("Invalid input retry")
-        getHumanChoice()
-    }
-}
+
 
 function whoWon() {
     champion = humanScore > computerScore ? "Player" : "Computer";
@@ -41,6 +38,8 @@ function playRound(humanChoice, computerChoice) {
         humanScore += 1;
     }
     whoWon()
-}
+};
 
-
+rock.addEventListener("onClick", playRound(rock.id, getComputerChoice()))
+paper.addEventListener("onClick", playRound(paper.id, getComputerChoice()))
+scissors.addEventListener("onClick", playRound(scissors.id, getComputerChoice()))
