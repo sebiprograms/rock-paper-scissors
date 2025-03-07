@@ -3,7 +3,7 @@ let computerScore = 0;
 const rock = document.querySelector("#rock")
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
-
+const display = document.querySelector("#display")
 function getComputerChoice() {
     // Returns a number either 0 1 2
     choice = Math.floor(Math.random() * 3);
@@ -27,14 +27,14 @@ function whoWon() {
 function playRound(humanChoice, computerChoice) {
 
     if (humanChoice == computerChoice){
-        console.log("Tie!")
+        display.textContent = "Tie!"
         humanScore += 1;
         computerScore += 1;
-    } else if ((humanChoice == "rock" && computerChoice == "paper") || (humanChoice == "paper" && computerChoice == "scissors") || (humanChoice == "scissorrs" && computerChoice == "rock")) {
-        console.log("Computer Wins!")
+    } else if ((humanChoice == "rock" && computerChoice == "paper") || (humanChoice == "paper" && computerChoice == "scissors") || (humanChoice == "scissors" && computerChoice == "rock")) {
+        display.textContent = "Computer Wins!"
         computerScore += 1;
     } else {
-        console.log("Human Wins!");
+        display.textContent = "Human Wins!"
         humanScore += 1;
     }
 }
