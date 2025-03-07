@@ -22,7 +22,10 @@ function getHumanChoice() {
     }
 }
 
-
+function whoWon() {
+    champion = humanScore > computerScore ? "Player" : "Computer";
+    console.log("The Champion is " + champion);
+}
 
 function playRound(humanChoice, computerChoice) {
 
@@ -37,30 +40,7 @@ function playRound(humanChoice, computerChoice) {
         console.log("Human Wins!");
         humanScore += 1;
     }
+    whoWon()
 }
-
-
-// Game loop
-function playGame() {
-    let gameOn = true;
-
-    while(gameOn) {
-
-        // Best out of 3 rounds wins
-        for (let i = 0; i < 3; i++) {
-            playRound(getHumanChoice(), getComputerChoice())
-        }
-
-        // decides winner
-        champion = humanScore > computerScore ? "Player" : "Computer";
-        console.log("The Champion is " + champion);
-        gameOn = false;
-    }
-
-}
-
-playGame();
-
-
 
 
