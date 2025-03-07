@@ -15,7 +15,11 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    return prompt("rock,  paper, scissors", "Input choice");
+    let choice = prompt("rock,  paper, scissors", "Input choice");
+    if (( choice != "rock" ) || ( choice != "paper" ) || ( choice != "scissors" )) {
+        console.error("Invalid input retry")
+        getHumanChoice()
+    }
 }
 
 
