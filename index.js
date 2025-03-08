@@ -1,9 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
+let rounds = 0;
 const rock = document.querySelector("#rock")
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
 const display = document.querySelector("#display")
+
 function getComputerChoice() {
     // Returns a number either 0 1 2
     choice = Math.floor(Math.random() * 3);
@@ -17,7 +19,9 @@ function getComputerChoice() {
     }
 }
 
-
+function updatePts(){
+    document.querySelector("#count").textContent = `Player: ${humanScore}   Computer: ${computerScore}` 
+}
 
 function whoWon() {
     champion = humanScore > computerScore ? "Player" : "Computer"
@@ -37,17 +41,23 @@ function playRound(humanChoice, computerChoice) {
         display.textContent = "Human Wins!"
         humanScore += 1;
     }
+    
+    updatePts()
 }
 
 
 rock.addEventListener("click", () => {
     playRound(rock.id, getComputerChoice())
+    count++
 })
 
 paper.addEventListener("click", () => {
     playRound(paper.id, getComputerChoice())
+    count++
 })
 
 scissors.addEventListener("click", () => {
     playRound(scissors.id, getComputerChoice())
+    count++
 })
+
